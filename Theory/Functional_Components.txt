@@ -1,0 +1,20 @@
+Looking at Basics of Components in React:
+JSX:
+- Javascript XML which allows you to write html code inside JS and converts HTML tags into React elements
+
+Props vs State
+- Props is short for properties which is similar to function's parameter and state is similar to declaring variables within a function.
+
+- So main difference between Props and State is that props getting passed into a component while state is mananged within a component.
+
+
+Conditional Rendering
+- As the name suggests, display components based on a specific behaviour of a state using logical operators if required.
+
+Composition vs Inheritance
+- Two design patterns to reuse and combine code are Inheritance and Composition
+
+- Inheritance has a base (parent) class which is further built upon by child classes. IT IS NOT ADVISED TO APPLY INHERITANCE TO REACT COMPONENTS
+
+React is component based so that is recommended instead.
+

@@ -1,0 +1,10 @@
+Vite is a javascript built tool that allows us to easily create frontend web applications.
+
+Does two things
+- Run app on local host
+- Bundle all files like html css and js together
+
+Enables HMR - Hot Module Replacement
+When a change is made to the react app, it ensures the state is not lost
+
+npm run build is a command to build the app for deployment
