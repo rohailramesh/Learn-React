@@ -1,0 +1,165 @@
+Passing Props to Components
+1. We can pass multiple props from Parent to child component and then the child can destructure and make use of the props they wish
+
+<img
+      className="avatar"
+      src="https://i.imgur.com/1bX5QH6.jpg"
+      alt="Lin Lanying"
+      width={100}
+      height={100}
+    />
+
+// everything inside the img tag above is a prop being passed with their value
+//
+
+export default function Profile() {
+  return (
+    <Avatar
+      person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }} -> passing props to child component
+      size={100}
+    />
+  );
+}
+
+function Avatar({ person, size = 100 }) { //adding a deafult value for size to fallback to if no value is provided
+  // person and size are available here directly since you are doing object destructuring
+}
+
+OR
+
+function Avatar(props) {
+  let person = props.person;
+  let size = props.size;
+  // ...
+}
+
+
+Forwarding props with JSX spread syntax
+When passing too many props too many times, it is better to use spread syntax 
+
+function Profile({ person, size, isSepia, thickBorder }) {
+  return (
+    <div className="card">
+      <Avatar
+        person={person}
+        size={size}
+        isSepia={isSepia}
+        thickBorder={thickBorder}
+      />
+    </div>
+  );
+}
+
+
+function Profile(props) {
+  return (
+    <div className="card">
+      <Avatar {...props} />
+    </div>
+  );
+}
+
+
+Props are not static i.e. they can change depending on data but also at the same time, props are immutable (meaning they are unchangeable) so they have to ask for permission from parent component inorder to change.
+
+
+useRef and state
+useRef persists the value of a variable everytime it is changed withot causing a complete re-render upon each update to the variable. useRef is mutable meaning you can read and write the value outisde of rendering process.
+UseRef is ideal for accessing DOM elements directly
+
+Difference between useRef and state
+refs	
+useRef(initialValue) returns { current: initialValue }	
+Doesn’t trigger re-render when you change it.
+Triggers re-render when you change it.
+Mutable—you can modify and update current’s value outside of the rendering process.	
+You shouldn’t read (or write) the current value during rendering.	
+
+
+state
+useState(initialValue) returns the current value of a state variable and a state setter function ( [value, setValue])
+”Immutable”—you must use the state setting function to modify state variables to queue a re-render.
+You can read state at any time. However, each render has its own snapshot of state which does not change.
+
+
+
+Event Handlers in JSX
+These are functions that are triggered in jsx in response to an interaction.
+Eg: Clicking a button or hovering over a mouse
+
+export default function Button() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+}
+
+
+To define an inline handler in JSX:
+<button onClick=(() => {console.log("clicked")})</button>
+
+
+Functions passed to event handlers must be passed, not called. For example:
+
+passing a function (correct)	
+<button onClick={handleClick}>	
+This will make sure react remembers and only calls the handler to be triggered when user clicks the button.
+
+
+calling a function (incorrect)
+<button onClick={handleClick()}> This way as soon as the component renders everytime, the handler will be triggered even if it was not intended to.
+
+Higher Order Components
+This allows you take a component as an argument in a function and return a new component with additional props. Mainly used when reusing logic across multiple components that are not the same but are similar in ways.
+Commonly used for implementing features like auth, error handling or data loading
+Eg: Having a Loading spinner which after few seconds loads the user's data that is passed into the 
+
+
+List and keys
+In react, when displaying a list, it is important that each item in the list has a key prop that makes it unique for each item
+
+Eg:
+const users = ["Alice", "Bob", "Charlie"]
+const List_Keys = () => {
+  const users = [
+    {
+      id: 0, // Used in JSX as a key
+      name: "Creola Katherine Johnson",
+    },
+    {
+      id: 1, // Used in JSX as a key
+      name: "Mario José Molina-Pasquel Henríquez",
+    },
+    {
+      id: 2, // Used in JSX as a key
+      name: "Mohammad Abdus Salam",
+    },
+  ];
+
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id}>
+          <p>{user.name}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+
+Component Life Cycle
+A component's lifecycle in react has three phases:
+- Mounting lifecycle methods, that is inserting elements into the DOM.
+- Updating, which involves methods for updating components in the DOM.
+- Unmounting, that is removing a component from the DOM.
+
+Recommended to use useEffect hook instead of manually using the lifecycle methods
+
+React component lifecycle with hooks
+You can take advantage of the useEffect hook to achieve the same results as with the componentDidMount, componentDidUpdate and componentWillUnmount methods. useEffect accepts two parameters. The first one is a callback which runs after render, much like in componentDidMount. The second parameter is the effect dependency array. If you want to run it on mount and unmount only, pass an empty array [].
