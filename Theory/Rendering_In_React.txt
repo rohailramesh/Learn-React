@@ -64,14 +64,13 @@ Props are not static i.e. they can change depending on data but also at the same
 
 
 useRef and state
-useRef persists the value of a variable everytime it is changed withot causing a complete re-render upon each update to the variable. useRef is mutable meaning you can read and write the value outisde of rendering process.
+useRef persists the value of a variable everytime it is changed without causing a complete re-render upon each update to the variable. useRef is mutable meaning you can read and write the value outisde of rendering process.
 UseRef is ideal for accessing DOM elements directly
 
 Difference between useRef and state
 refs	
 useRef(initialValue) returns { current: initialValue }	
 Doesn’t trigger re-render when you change it.
-Triggers re-render when you change it.
 Mutable—you can modify and update current’s value outside of the rendering process.	
 You shouldn’t read (or write) the current value during rendering.	
 
@@ -80,7 +79,7 @@ state
 useState(initialValue) returns the current value of a state variable and a state setter function ( [value, setValue])
 ”Immutable”—you must use the state setting function to modify state variables to queue a re-render.
 You can read state at any time. However, each render has its own snapshot of state which does not change.
-
+Triggers re-render when you change it.
 
 
 Event Handlers in JSX

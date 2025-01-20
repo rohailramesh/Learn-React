@@ -1,0 +1,37 @@
+Different hooks in react
+Hooks in react can be categorised into the following:
+1. state management
+2. context hooks
+3. ref hooks
+4. effect hooks
+5. transition hooks
+6. performance hooks
+
+
+
+1. useState
+useState hook is used to manage the state (kind of like a variable) of a component in functional components. Calling useState returns an array with two elements: the current state value and a function to update the state.
+eg: const [name, setName] = useState(initial value here if any);
+
+2. useEffect
+Type of hook that lets you run 'side effects' when the component changes during initial mount kind of like componentDidMount and componentDidUpdate from the component lifecycle. It also has a function to execute, a return which is esentially cleaning up as component unmounts and finally a dependency array which allows the useEffect hook to trigger if any item in the array changes. Can be left empty so in that way it will only trigger on initial component mount.
+
+3. useRef 
+this hook ensures that the value of some variable persists even if another state or component causes a re-render to the page. We can access the value it references to using ref.current. It is ideal for accessing DOM elements directly.
+
+4. useMemo
+when we use useState, it causes a re-render to the page everytime the state is updated. This can be a problem when working with large values that even though they get computed once, if another value's state changes, the re-render causes the recalculation of that function even if it was unchanged.
+
+This affects the performance negatively. To overcome this problem, we can use the hook called useMemo which basically memoises that big value and acts as a cache. So after the first computation of that value/function, it will return that value from the cache instead of recalculating it. If any of the dependency in the useMemo changes then only will the value be recomputed and the cache will be updated with the new value. It is important to make sure that the useMemo has a function and a dependency array.
+
+
+
+
+HOOKS TO COVER NEXT 
+5. useContext
+Instead of drilling props from parent component to child component repeatedly,
+useContext hook is used to make the variable global by parent component which can then be accessed by child components by wrapping the child components in the context provider. There is createContext and useContext that we can use and when wrapping the components, pass a value (which is ideally what you want the child components to access).
+
+
+6. useReducer
+7. useCallback

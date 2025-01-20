@@ -1,0 +1,23 @@
+1. What is React?
+React is a Javascript library used for creating dynamic web applications.
+
+2. What are the features of React?
+React uses Virtual DOM instead of real DOM, JSX, server side rendering, reusable components, unidirectional data flow and much more.
+
+3.What is JSX?
+It is an extension of Javascript where JSX produces a Reat component and you can embed and javascript expression within by using curly braces.
+
+4. Virtual DOM vs Actual DOM in React and how it works
+
+5. Difference between props and state
+
+6. Controlled vs uncontrolled components?
+uncontrolled components make use of the hook useRef when they query the DOM for a value they need.
+controlled components use callBacks and useState to access current value of state.
+
+7. What ways are there to style React components?
+
+8. What is the useMemo hook used for and how can we use that to make a pure component?
+
+9. What is the purpose of the key attribute in React
+Key attribute acts as a unique identifier for each of the element in an array which helps React identify which element is changed, added or removed. 

@@ -1,0 +1,64 @@
+React-Router is a popular library fo rhandling client-side routing in react.
+Key concepts of React-Router:
+1. BrowserRouter -> This is what you wrap your App component with so that you can use Routes, Route, Link and more. Like an infrastructure
+2. Routes & Route -> Inside Routes you add multiple Route which corresspond to specific component in the app which is rendered when user goes to a URL that is linked to it
+3. Link -> Creates link to allow navigation between routes in app
+4. Navigate or useNavigate function -> Directs user to specific route based on a certain logic that is executed
+
+
+DIFFERENCE BETWEEN ROUTE AND LINK
+Route is like the final destination you want to go to
+Link is how you will get there. E.g a car
+Link doesn't re-render a page when used whereas Route does
+
+
+How App.jsx should look like:
+ import React from 'react';
+ import ReactDOM from 'react-dom/client';
+ import './index.css';
+ import App from './App';
+ import reportWebVitals from './reportWebVitals';
+ import { BrowserRouter } from 'react-router-dom';
+
+ const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(
+   <React.StrictMode>
+     <BrowserRouter>
+     <App />
+     </BrowserRouter>
+   </React.StrictMode>
+ );
+
+
+How Routes and Route is used:
+ <div className="App">
+       <Routes>
+         <Route path='/' element={<Home/>} />
+         <Route path='/about' element={<About/>} />
+         <Route path='/contact' element={<Contact/>} />
+       </Routes>
+</div>
+
+
+Use of Link:
+import { Link } from "react-router-dom";
+
+ const Navbar = () => {
+   return (
+     <nav>
+       <ul>
+         <li>
+           <Link to="/">Home</Link>
+         </li>
+         <li>
+           <Link to="/about">About</Link>
+         </li>
+         <li>
+           <Link to="/contact">Contact</Link>
+         </li>
+       </ul>
+     </nav>
+   );
+ }
+
+ export default Navbar

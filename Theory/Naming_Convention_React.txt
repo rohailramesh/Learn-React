@@ -2,20 +2,23 @@ Naming conventions for different things in React
 1. Naming Components
 - PascalCase. Eg: ProductCard.jsx
 
-2. Naming Files
+2. Variables
+- camelCase. Eg: const firstName = "Rohail"; 
+
+3. Naming Files
 - PascalCase. Should match the name of the component if used. Eg: ProductPage.jsx
 
-3. Props
+4. Props
 - Use a descriptive name. Eg 'user' instead of 'usr'
 
-4. State variables
+5. State variables
 - Prefix state variables with is, has, or should to denote boolean values. Eg: [isActive, setIsActive]
 
-5. Event handlers
+6. Event handlers
 - Use 'handle' as prefix and then a suitable name corresponding to the event. Eg: handleEventClick
 
-6. CSS classes
+7. CSS classes
 - Use lowercase letters and hyphens. Eg: class='example-container'
 
-7. Utility functions or helper functions
+8. Utility functions or helper functions
 - Use camelCase for utility or helper functions. Eg. calculateDate();
