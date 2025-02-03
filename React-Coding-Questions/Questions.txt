@@ -1,0 +1,22 @@
+1. Create a Counter Component ----DONE
+2. Implement a Toggle Switch ----DONE
+3. Build a To-Do List
+4. Fetch Data from an API
+5. Create a Search Bar
+6. Build a Dropdown Menu
+7. Implement a Tabs Component
+8. Create a Modal Component
+9. Build a Carousel Component
+10. Implement a Star Rating Component
+11. Create a Real-Time Search Filter
+12. Build a Multi-Step Form
+13. Implement a Virtualized List
+14. Create a Reusable Form Component with Validation
+15. Implement a Dynamic Form with Field Arrays
+16. Implement a Context API for Global State
+17. Create a Custom Hook
+18. Build a Todo List with Drag-and-Drop
+19. Create a Countdown Timer
+20. Implement Formik with Yup Validation Conclusion
+
+https://dev.to/allenarduino/live-coding-react-interview-questions-2ndh
