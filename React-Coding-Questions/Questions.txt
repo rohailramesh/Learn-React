@@ -1,7 +1,7 @@
 1. Create a Counter Component ----DONE
 2. Implement a Toggle Switch ----DONE
-3. Build a To-Do List
-4. Fetch Data from an API
+3. Build a To-Do List ----DONE
+4. Fetch Data from an API   ----DONE
 5. Create a Search Bar
 6. Build a Dropdown Menu
 7. Implement a Tabs Component

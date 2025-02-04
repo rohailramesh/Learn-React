@@ -28,7 +28,7 @@ const Problem_2 = () => {
         Toggle on
       </button>
 
-      <h3>Proposed Solution:</h3>
+      <h3>Alternate Solution for Problem 2:</h3>
       <ProposedSolution />
     </>
   );
